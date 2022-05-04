@@ -1,0 +1,52 @@
+.logo{
+    margin-top:0px;
+    padding: 0px;
+    height: 5rem;
+    width: 10rem;
+    background: url('../img/logo.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+nav{
+    background:url('../img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.card{
+    padding:1rem;
+}
+
+.previewPlan,.previewFeat,.previewCat{
+    text-align: center;
+}
+
+#preview{
+    position:relative;
+    width: 50%;
+    margin: 0 auto;
+    border-top: 0px;
+    border-bottom:0px;
+    text-align:left;
+}
+
+
+.fontStyle{
+    text-align:left;
+}
+
+.gstarted{
+    border-radius: 5rem;
+    font-weight:bold;
+    font-size:12pt;
+    background: url('../img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 3rem;
+}
+
+.required{
+    color: red;
+}
+
