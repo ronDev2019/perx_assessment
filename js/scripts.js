@@ -1,6 +1,5 @@
 $('.previewPlan').hide();
 $('.previewFeat').hide();
-$('.previewCat').hide();
 $('#save').hide();
 $('#prev').hide();
 $('.planAmount').hide();
@@ -8,7 +7,6 @@ $('.planAmount').hide();
 // Forms Used for adding Plans, Features, Categories
 $('#addPlan').hide();
 $('#addFeat').hide();
-$('#addCat').hide();
 
 
 // Use to show forms by call the function onClick
@@ -18,33 +16,19 @@ function showForm(val){
 
 		$('#addPlan').fadeIn()
 		$('#addFeat').hide()
-		$('#addCat').hide()
 
 		$('.previewPlan').hide();
 		$('.previewFeat').hide();
-		$('.previewCat').hide();
 
 	} else if(val === "feat") {
 
 		$('#addPlan').hide()
 		$('#addFeat').fadeIn()
-		$('#addCat').hide()
 
 		$('.previewPlan').hide();
 		$('.previewFeat').hide();
-		$('.previewCat').hide();
 
 		$('#addFeat').load('pages/modules/featureModule.php');
-
-	} else {
-
-		$('#addPlan').hide()
-		$('#addFeat').hide()
-		$('#addCat').fadeIn()
-
-		$('.previewPlan').hide();
-		$('.previewFeat').hide();
-		$('.previewCat').hide();
 
 	}
 
@@ -61,10 +45,6 @@ function showPreview(val){
 	} else if(val === "feat") {
 
 		$('.previewFeat').fadeIn()
-
-	} else {
-
-		$('.previewCat').fadeIn()
 
 	}
 
@@ -132,7 +112,7 @@ $('#prev').on('click', () => {
 		$('#planPrev').text($('#planName').val());
 		$('#planDescPrev').text($('#planDesc').val());
 		$('#planSubPrev').text(subs);
-		$('#planAmountPrev').text($('#planAmount').val());
+		$('#planAmountPrev').text('$'+$('#planAmount').val()+' USD');
 
 	}
 
@@ -210,7 +190,7 @@ function savedata(val){
 
 				if(response.status === 200){
 
-					alert(response.message)
+					//alert(response.message)
 					//alert(planId)
 
 					$.ajax({
@@ -241,10 +221,6 @@ function savedata(val){
 			}
 		})
 
-
-	} else {
-
-		alert(val)
 
 	}
 }

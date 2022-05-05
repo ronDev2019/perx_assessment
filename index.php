@@ -31,11 +31,8 @@
                     <li class="nav-item" onclick="showForm('feat')">
                         <a class="nav-link" href="#">Add Features</a>
                     </li>
-                    <li class="nav-item" onclick="showForm('cat')">
-                        <a class="nav-link" href="#">Add Categories</a>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/pricing.php">Pricing Page</a>
+                        <a class="nav-link" target="_blank" href="pages/pricing.php">Pricing Page</a>
                     </li>
                 </ul>
             </div>
@@ -80,33 +77,6 @@
                 <!-- Dynamic Reload of Features Section -->
                 </div>
                 <!-- End of Add Feature Section -->
-                <!-- Add Category Section -->
-                <div class="col-md-6 col-lg-6 card" id="addCat">
-                    <h4> Add Categories </h4>
-                    <div class="form-group">
-                      <label class="col-form-label" for="inputDefault">Plan Name</label><span class="required">*</span>
-                      <input type="text" class="form-control" placeholder="eg. Business" id="planName" required="true" value="">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleTextarea" class="form-label ">Plan Desciption</label><span class="required">*</span>
-                      <textarea class="form-control" id="planDesc" required="true" value="" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelect1" class="form-label">Select Subscription</label><span class="required">*</span>
-                      <select class="form-select" id="subType">
-                        <option value="" disabled="true" selected="true">Choose</option>
-                        <option value="1">Monthly</option>
-                        <option value="12">Yearly</option>
-                      </select>
-                    </div>
-                    <div class="form-group planAmount">
-                      <label class="col-form-label" for="inputDefault">Plan Amount</label><span class="required">*</span>
-                      <input type="text" class="form-control" placeholder="eg. 90" id="planAmount" required="true" value="">
-                    </div>
-                    <button type="button" id="prevCat" onClick="showPreview('cat')" class="btn btn-primary">Preview</button><br>
-                    <button type="button" id="saveCat" onClick="savedata('cat')" class="btn btn-success">Save</button>
-                </div>
-                <!-- End of Add Category Section -->
 
                 <div class="col-md-6 col-lg-6 previewPlan">
                     <!-- Preview of Plan -->
@@ -115,23 +85,7 @@
                 <div class="col-md-6 col-lg-6 previewFeat">
                     <!-- Preview of Plan with Features -->
                 </div>
-                <div class="col-md-6 col-lg-6 previewCat">
-                    <!-- Preview of Plan -->
-                    <?php include('pages/modules/categoriesPreview.php'); ?>
-                </div>
         </div>
-        <div class="row mt-5">
-            <div class="col-md-12">
-                <h4> Existing Plans & Features </h4>
-                <div class="card border-secondary mb-3" style="max-width: 20rem;">
-                  <div class="card-header">Header</div>
-                  <div class="card-body">
-                    <h4 class="card-title">Secondary card title</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  </div>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>

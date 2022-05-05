@@ -1,20 +1,14 @@
 <?php
 	
-require_once '../../config/db.php';
+require_once '../config/db.php';
 
-// Delete Feature
-if(isset($_POST['planId'])){
+$outputPlan = $conn->query("SELECT * FROM plans ORDER BY id");
 
-	$planId = $conn->real_escape_string($_POST['planId']);
-	@$featId = $conn->real_escape_string($_POST['featId']);
+if($outputPlan->num_rows > 0){
 
-	$deleteFeat = $conn->query("DELETE FROM features WHERE planId = \"$planId\" AND featureId = \"$featId\"");
-}
+while($planData = $outputPlan->fetch_array()){
 
-$planId = $conn->real_escape_string($_POST['planId']);
-
-$outputPlan = $conn->query("SELECT * FROM plans WHERE id = \"$planId\"");
-$planData = $outputPlan->fetch_array();
+$planId	= $planData['id'];
 
 if($planData['subscription'] == 1){
 	$sub = "Monthly";
@@ -23,8 +17,8 @@ if($planData['subscription'] == 1){
 }
 
 ?>
-                    <h4> Preview </h4>
-                    <div class="card mt-5" id="preview">
+				<div class="col-lg-3">
+                    <div class="card mt-5 pricepreview">
                         <label for="planPrev" id="planPrev" class="bold plan-name"> <?= $planData['plan'] ?> </label>
                         <label for="planDesc" id="planDescPrev"> <?= $planData['description'] ?> </label><hr>
                         <label for="planSub" id="planSubPrev" class="mt-2 bold"> <?= $sub ?> </label>
@@ -42,10 +36,8 @@ if($outputFeatures->num_rows > 0){
 
 ?>
 
-						<label for="featureName" id="planAmountPrev" class="feat bold"> <img src="img/heavy-check-mark-svgrepo-com.svg" class="mr-2" alt=""> <?= $featData['feature'] ?> <button type="button" class="btn btn-link" onclick="deleteFeat('<?= $planData['id'] ?>','<?= $featData['featureId'] ?>')">Delete</button> </label>
+						<label for="featureName" id="planAmountPrev" class="feat bold"> <img src="../img/heavy-check-mark-svgrepo-com.svg" class="mr-2" alt=""> <?= $featData['feature'] ?></label>
 						<label for="featureDesc" id="planAmountPrev" class="feat desc"> <?= $featData['description'] ?></label>
-						<input type="hidden" value="<?= $planData['id'] ?>" id="planId">
-						<input type="hidden" value="<?= $featData['featureId'] ?>" id="featId">
 
 
 <?php
@@ -57,6 +49,26 @@ if($outputFeatures->num_rows > 0){
 ?>
 
 						<label for="featureName" id="planAmountPrev"> No Feature Added </label>
+
+
+<?php
+
+}
+
+?>
+
+					</div>
+				</div>
+
+<?php
+
+}
+
+} else {
+
+?>
+
+	<h1 class="text-center"> No Plan Created </h1>
 
 <?php
 

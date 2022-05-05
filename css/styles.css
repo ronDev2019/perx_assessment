@@ -24,7 +24,7 @@ nav{
 
 #preview{
     position:relative;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     border-top: 0px;
     border-bottom:0px;
@@ -48,5 +48,66 @@ nav{
 
 .required{
     color: red;
+}
+
+.bold{
+    font-weight:bold;
+    -webkit-text-stroke:0.2px white;
+}
+
+.plan-name{
+    font-size:20pt;
+}
+
+.price{
+    font-size:15pt;
+}
+.feat{
+    position:relative;
+}
+
+.feat > img{
+    height:15px;
+    width:auto;
+    color:red !important;
+}
+
+.desc {
+    margin-left:20px;
+}
+
+/*Pricing Page CSS*/
+.float-right{
+    font-size:12pt;
+    font-weight:bold;
+    letter-spacing:2px;
+    column-gap:100px;
+}
+
+.float-right .collapse ul > li{
+    position:relative;
+    margin-left:30px;
+    color:white;
+}
+
+.pricing-page > h1{
+    font-weight:bold;
+    word-spacing:8px;
+
+}
+
+.pricepreview{
+    position:relative;
+    width: 96%;
+    margin: 0 auto;
+    border-top: 0px;
+    border-bottom:0px;
+    text-align:left;
+}
+
+.priceContainer{
+    height:auto;
+    display: flex;
+    margin-bottom:100px;  
 }
 
